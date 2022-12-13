@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: absalhi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: absalhi <absalhi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 08:19:53 by absalhi           #+#    #+#             */
-/*   Updated: 2022/11/30 16:10:04 by absalhi          ###   ########.fr       */
+/*   Updated: 2022/12/13 04:32:11 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ t_stack	*ft_stacknew(int content)
 	if (!tab)
 		return (NULL);
 	tab->content = content;
+	tab->pos = DEFAULT;
+	tab->target_pos = DEFAULT;
+	tab->final_rank = DEFAULT;
+	tab->cost_stack_a = DEFAULT;
+	tab->cost_stack_b = DEFAULT;
 	tab->next = NULL;
 	return (tab);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: absalhi <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: absalhi <absalhi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 07:13:36 by absalhi           #+#    #+#              #
-#    Updated: 2022/11/30 16:29:05 by absalhi          ###   ########.fr        #
+#    Updated: 2022/12/13 04:42:49 by absalhi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,10 @@ GREEN	=	'\033[32m'
 GRAY	=	'\033[2;37m'
 ITALIC	=	'\033[3m'
 
-_SRCS	=	push_swap.c push_swap_utils.c stack_utils.c \
+_SRCS	=	push_swap.c push_swap_utils.c stack_utils.c stack_utils_2.c \
 			push_swap_errors.c push_swap_operations.c push_swap_operations_2.c \
-			push_swap_operations_3.c
+			push_swap_operations_3.c quick_sort_stack.c sort_stack.c \
+			stack_position.c
 SRCS	=	$(addprefix srcs/, $(_SRCS))
 OBJS	=	$(SRCS:.c=.o)
 

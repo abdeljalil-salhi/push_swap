@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_operations_3.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: absalhi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: absalhi <absalhi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 21:52:02 by absalhi           #+#    #+#             */
-/*   Updated: 2022/11/30 16:55:40 by absalhi          ###   ########.fr       */
+/*   Updated: 2022/12/13 05:50:43 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,52 +26,56 @@ static t_stack	*ft_stackprelast(t_stack *stack)
 	return (current);
 }
 
-void	rotate_a(t_pushswap *ps, int display)
+int	rotate_a(t_pushswap *ps, int display)
 {
 	if (ps->stack_a_size < 2)
-		return ;
-	ft_stackadd_back(&ps->stack_a, ft_stacknew(ps->stack_a->content));
+		return (0);
+	ft_stackadd_back(&ps->stack_a, ft_stackdup(*(ps->stack_a)));
 	free(ps->stack_a);
 	ps->stack_a = ps->stack_a->next;
 	if (display)
 		ft_putstr_fd("ra\n", 1);
+	return (1);
 }
 
-void	rotate_b(t_pushswap *ps, int display)
+int	rotate_b(t_pushswap *ps, int display)
 {
 	if (ps->stack_b_size < 2)
-		return ;
-	ft_stackadd_back(&ps->stack_b, ft_stacknew(ps->stack_b->content));
+		return (0);
+	ft_stackadd_back(&ps->stack_b, ft_stackdup(*(ps->stack_b)));
 	free(ps->stack_b);
 	ps->stack_b = ps->stack_b->next;
 	if (display)
 		ft_putstr_fd("rb\n", 1);
+	return (1);
 }
 
-void	reverse_rotate_a(t_pushswap *ps, int display)
+int	reverse_rotate_a(t_pushswap *ps, int display)
 {
 	t_stack	*last;
 
 	if (ps->stack_a_size < 2)
-		return ;
+		return (0);
 	last = ft_stacklast(ps->stack_a);
-	ft_stackadd_front(&ps->stack_a, ft_stacknew(last->content));
+	ft_stackadd_front(&ps->stack_a, ft_stackdup(*(last)));
 	ft_stackprelast(ps->stack_a)->next = NULL;
 	free(last);
 	if (display)
 		ft_putstr_fd("rra\n", 1);
+	return (1);
 }
 
-void	reverse_rotate_b(t_pushswap *ps, int display)
+int	reverse_rotate_b(t_pushswap *ps, int display)
 {
 	t_stack	*last;
 
 	if (ps->stack_b_size < 2)
-		return ;
+		return (0);
 	last = ft_stacklast(ps->stack_b);
-	ft_stackadd_front(&ps->stack_b, ft_stacknew(last->content));
+	ft_stackadd_front(&ps->stack_b, ft_stackdup(*(last)));
 	ft_stackprelast(ps->stack_b)->next = NULL;
 	free(last);
 	if (display)
 		ft_putstr_fd("rrb\n", 1);
+	return (1);
 }

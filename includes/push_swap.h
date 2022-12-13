@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 07:14:07 by absalhi           #+#    #+#             */
-/*   Updated: 2022/12/11 14:07:50 by absalhi          ###   ########.fr       */
+/*   Updated: 2022/12/13 05:49:41 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,16 @@
 # include "../libft/libft.h"
 # include <stdio.h>
 
+# define DEFAULT -69
+
 typedef struct s_stack
 {
 	int				content;
+	int				pos;
+	int				target_pos;
+	int				final_rank;
+	int				cost_stack_a;
+	int				cost_stack_b;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -28,27 +35,39 @@ typedef struct s_pushswap
 	t_stack	*stack_b;
 	size_t	stack_a_size;
 	size_t	stack_b_size;
-	int		count;
 	int		allocated;
 	int		argc;
 	char	**argv;
 }	t_pushswap;
 
+struct s_find_move
+{
+	t_pushswap	*ps;
+	int			cost_stack_a;
+	int			cost_stack_b;
+}
+
 void	ft_check_one_argv(t_pushswap *ps, char *argv);
 int		ft_check_and_init(t_pushswap *ps);
 void	ft_display_stack(t_pushswap *ps);
-void	push_swap_simple(t_pushswap *ps);
+
+void	push_swap(t_pushswap *ps);
+
+void    ft_quick_sort_stack(t_pushswap *ps);
+
+void    ft_sort_stack(t_pushswap *ps);
+void    ft_set_target_pos(t_pushswap *ps);
 
 void	swap_a(t_pushswap *ps, int display);
 void	swap_b(t_pushswap *ps, int display);
 void	swap_ab(t_pushswap *ps, int display);
-void	push_a(t_pushswap *ps, int display);
-void	push_b(t_pushswap *ps, int display);
-void	rotate_a(t_pushswap *ps, int display);
-void	rotate_b(t_pushswap *ps, int display);
+int		push_a(t_pushswap *ps, int display);
+int		push_b(t_pushswap *ps, int display);
+int		rotate_a(t_pushswap *ps, int display);
+int		rotate_b(t_pushswap *ps, int display);
 void	rotate_ab(t_pushswap *ps, int display);
-void	reverse_rotate_a(t_pushswap *ps, int display);
-void	reverse_rotate_b(t_pushswap *ps, int display);
+int		reverse_rotate_a(t_pushswap *ps, int display);
+int		reverse_rotate_b(t_pushswap *ps, int display);
 void	reverse_rotate_ab(t_pushswap *ps, int display);
 
 int		ft_isint(char *str);
@@ -58,8 +77,10 @@ void	ft_exit_error(char *str);
 
 t_stack	*ft_stacknew(int content);
 t_stack	*ft_stacklast(t_stack *stack);
+t_stack	*ft_stackdup(t_stack stack);
 int		ft_stackclear(t_stack **stack);
 void	ft_stackadd_front(t_stack **stack, t_stack *_new);
 void	ft_stackadd_back(t_stack **stack, t_stack *_new);
+int		ft_is_stack_sorted(t_stack *stack);
 
 #endif

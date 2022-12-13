@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 07:14:01 by absalhi           #+#    #+#             */
-/*   Updated: 2022/12/11 14:07:56 by absalhi          ###   ########.fr       */
+/*   Updated: 2022/12/13 05:04:27 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,23 @@ void	ft_display_stack(t_pushswap *ps)
 	{
 		if (current_a)
 		{
-			printf("%d", current_a->content);
+			printf("% 4d [%3d] <%3d>", current_a->content,
+				current_a->final_rank, current_a->pos);
 			current_a = current_a->next;
 		}
 		else
-			printf(" ");
-		printf(" ");
+			printf("                ");
+		printf("|");
 		if (current_b)
 		{
-			printf("%d\n", current_b->content);
+			printf("% 4d [%3d] <%3d>\n", current_b->content,
+				current_b->final_rank, current_b->pos);
 			current_b = current_b->next;
 		}
 		else
 			printf(" \n");
 	}
-	printf("- -\na b\n");
+	printf(" ---------------|----------------\n        a       |        b\n");
 	printf("stack_a:%zu stack_b:%zu\n", ps->stack_a_size, ps->stack_b_size);
 }
 
@@ -62,9 +64,8 @@ int	ft_check_and_init(t_pushswap *ps)
 	t_stack	*_new;
 	int		i;
 
-	if (!ps->argc)
+	if (!ps->argc || ps->argc == 1)
 		exit(0);
-	ps->count = 0;
 	i = -1;
 	while (++i < ps->argc)
 		if (!ft_isint(ps->argv[i]))
@@ -86,7 +87,12 @@ int	ft_check_and_init(t_pushswap *ps)
 	return (0);
 }
 
-void	push_swap_simple(t_pushswap *ps)
+void	push_swap(t_pushswap *ps)
 {
-	(void) ps;
+	if (ps->stack_a_size == 2)
+		swap_a(ps, 1);
+	else if (ps->stack_a_size == 3)
+		ft_quick_sort_stack(ps);
+	else
+		ft_sort_stack(ps);
 }
