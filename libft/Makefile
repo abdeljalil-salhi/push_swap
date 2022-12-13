@@ -6,7 +6,7 @@
 #    By: absalhi <absalhi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/21 09:16:59 by absalhi           #+#    #+#              #
-#    Updated: 2022/12/13 05:24:31 by absalhi          ###   ########.fr        #
+#    Updated: 2022/12/13 20:22:01 by absalhi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,9 @@ SRCS		=	ft_isalpha.c	ft_isdigit.c		ft_isalnum.c	\
 				ft_lstlast.c	ft_lstadd_back.c	ft_lstdelone.c	\
 				ft_lstclear.c	ft_lstiter.c		ft_lstmap.c		\
 				ft_putlong_fd.c	ft_nullstrjoin.c	get_next_line.c \
-				ft_abs.c
+				ft_abs.c		ft_printf.c			ft_printchar.c	\
+				ft_printstr.c	ft_printnbr.c		ft_printhex.c	\
+				ft_printptr.c	ft_printunbr.c		ft_parse.c
 
 OBJS		=	$(SRCS:.c=.o)
 
