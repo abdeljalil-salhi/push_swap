@@ -40,10 +40,10 @@ static void	ft_get_cost(t_pushswap *ps)
 	while (crt_b)
 	{
 		crt_b->cost_stack_b = crt_b->pos;
-		if (crt_b->pos > ps->stack_b_size / 2)
+		if ((size_t)crt_b->pos > ps->stack_b_size / 2)
 			crt_b->cost_stack_b = (ps->stack_b_size - crt_b->pos) * -1;
 		crt_b->cost_stack_a = crt_b->target_pos;
-		if (crt_b->target_pos > ps->stack_a_size / 2)
+		if ((size_t)crt_b->target_pos > ps->stack_a_size / 2)
 			crt_b->cost_stack_a = (ps->stack_a_size - crt_b->target_pos) * -1;
 		crt_b = crt_b->next;
 	}
@@ -71,6 +71,21 @@ static void	ft_find_move(t_pushswap *ps)
 	ft_exec_move(ret);
 }
 
+static void	ft_rotate_stack(t_pushswap *ps, t_stack *stack, size_t size)
+{
+	int	least_pos;
+
+	ft_set_pos(stack);
+	least_pos = stack->pos;
+	ft_get_least_pos_by_ranking(stack, &least_pos);
+	if ((size_t)least_pos > size / 2)
+		while ((size_t)least_pos < size)
+			least_pos += reverse_rotate_a(ps, 1);
+	else
+		while (least_pos)
+			least_pos -= rotate_a(ps, 1);
+}
+
 void	ft_sort_stack(t_pushswap *ps)
 {
 	ft_push_b_and_prepare_quick_sort(ps, ps->stack_a_size);
@@ -82,4 +97,6 @@ void	ft_sort_stack(t_pushswap *ps)
 		ft_find_move(ps);
 	}
 	/* working on it */
+	if (!ft_is_stack_sorted(ps->stack_a))
+		ft_rotate_stack(ps, ps->stack_a, ps->stack_a_size);
 }

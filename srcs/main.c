@@ -72,9 +72,9 @@ int	main(int argc, char **argv)
 	if (ft_is_stack_sorted(ps.stack_a))
 		return (0);
 	ft_set_ranks(&ps, ps.stack_a_size + 1);
-	ft_display_stack(&ps);
+	// ft_display_stack(&ps);
 	push_swap(&ps);
-	ft_display_stack(&ps);
+	// ft_display_stack(&ps);
 	if (ps.allocated)
 		ft_free_main(&ps);
 	return (0);

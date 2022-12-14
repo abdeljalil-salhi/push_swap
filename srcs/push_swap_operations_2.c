@@ -44,14 +44,12 @@ int	push_b(t_pushswap *ps, int display)
 	return (1);
 }
 
-void	rotate_ab(t_pushswap *ps, int display)
+int	rotate_ab(t_pushswap *ps, int display)
 {
-	rotate_a(ps, display);
-	rotate_b(ps, display);
+	return (rotate_a(ps, display) + rotate_b(ps, display));
 }
 
-void	reverse_rotate_ab(t_pushswap *ps, int display)
+int	reverse_rotate_ab(t_pushswap *ps, int display)
 {
-	reverse_rotate_a(ps, display);
-	reverse_rotate_b(ps, display);
+	return (reverse_rotate_a(ps, display) + reverse_rotate_b(ps, display));
 }

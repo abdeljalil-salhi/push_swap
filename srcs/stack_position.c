@@ -42,7 +42,7 @@ static int	ft_get_target(t_pushswap *ps, int stack_b_rank,
 	return (target_pos);
 }
 
-static void	ft_set_pos(t_stack *stack)
+void	ft_set_pos(t_stack *stack)
 {
 	t_stack	*current;
 	int		i;
@@ -70,6 +70,24 @@ void	ft_set_target_pos(t_pushswap *ps)
 		target_pos = ft_get_target(ps, current->final_rank,
 				INT_MAX, target_pos);
 		current->target_pos = target_pos;
+		current = current->next;
+	}
+}
+
+void	ft_get_least_pos_by_ranking(t_stack *stack, int *least_pos)
+{
+	t_stack	*current;
+	int		least_rank;
+
+	least_rank = INT_MAX;
+	current = stack;
+	while (current)
+	{
+		if (current->final_rank < least_rank)
+		{
+			*least_pos = current->pos;
+			least_rank = current->final_rank;
+		}
 		current = current->next;
 	}
 }

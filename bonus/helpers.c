@@ -12,7 +12,7 @@
 
 #include "../includes/checker.h"
 
-static void	ft_init_arrays(void (*operations[11])(t_pushswap *, int),
+static void	ft_init_arrays(int (*operations[11])(t_pushswap *, int),
 		char *instructions[11])
 {
 	operations[0] = &swap_a;
@@ -41,7 +41,7 @@ static void	ft_init_arrays(void (*operations[11])(t_pushswap *, int),
 
 void	ft_do(t_pushswap *ps, char *buf)
 {
-	void	(*operations[11])(t_pushswap *, int);
+	int		(*operations[11])(t_pushswap *, int);
 	char	*instructions[11];
 	int		i;
 

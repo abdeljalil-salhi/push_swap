@@ -25,7 +25,7 @@ ITALIC	=	'\033[3m'
 _SRCS	=	push_swap.c push_swap_utils.c stack_utils.c stack_utils_2.c \
 			push_swap_errors.c push_swap_operations.c push_swap_operations_2.c \
 			push_swap_operations_3.c quick_sort_stack.c sort_stack.c \
-			stack_position.c
+			stack_position.c push_swap_exec.c
 SRCS	=	$(addprefix srcs/, $(_SRCS))
 OBJS	=	$(SRCS:.c=.o)
 

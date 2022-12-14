@@ -45,7 +45,7 @@ struct s_find_move
 	t_pushswap	*ps;
 	int			cost_stack_a;
 	int			cost_stack_b;
-}
+};
 
 void	ft_check_one_argv(t_pushswap *ps, char *argv);
 int		ft_check_and_init(t_pushswap *ps);
@@ -53,22 +53,25 @@ void	ft_display_stack(t_pushswap *ps);
 
 void	push_swap(t_pushswap *ps);
 
-void    ft_quick_sort_stack(t_pushswap *ps);
+void	ft_quick_sort_stack(t_pushswap *ps);
 
-void    ft_sort_stack(t_pushswap *ps);
-void    ft_set_target_pos(t_pushswap *ps);
+void	ft_sort_stack(t_pushswap *ps);
+void	ft_set_pos(t_stack *stack);
+void	ft_set_target_pos(t_pushswap *ps);
+void	ft_exec_move(struct s_find_move ret);
+void	ft_get_least_pos_by_ranking(t_stack *stack, int *least_pos);
 
-void	swap_a(t_pushswap *ps, int display);
-void	swap_b(t_pushswap *ps, int display);
-void	swap_ab(t_pushswap *ps, int display);
+int		swap_a(t_pushswap *ps, int display);
+int		swap_b(t_pushswap *ps, int display);
+int		swap_ab(t_pushswap *ps, int display);
 int		push_a(t_pushswap *ps, int display);
 int		push_b(t_pushswap *ps, int display);
 int		rotate_a(t_pushswap *ps, int display);
 int		rotate_b(t_pushswap *ps, int display);
-void	rotate_ab(t_pushswap *ps, int display);
+int		rotate_ab(t_pushswap *ps, int display);
 int		reverse_rotate_a(t_pushswap *ps, int display);
 int		reverse_rotate_b(t_pushswap *ps, int display);
-void	reverse_rotate_ab(t_pushswap *ps, int display);
+int		reverse_rotate_ab(t_pushswap *ps, int display);
 
 int		ft_isint(char *str);
 int		ft_isdup(char **argvs, int argc);

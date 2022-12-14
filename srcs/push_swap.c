@@ -23,24 +23,24 @@ void	ft_display_stack(t_pushswap *ps)
 	{
 		if (current_a)
 		{
-			printf("% 4d [%3d] <%3d>", current_a->content,
+			ft_printf("% 4d [%3d] <%3d>", current_a->content,
 				current_a->final_rank, current_a->pos);
 			current_a = current_a->next;
 		}
 		else
-			printf("                ");
-		printf("|");
+			ft_printf("                ");
+		ft_printf("|");
 		if (current_b)
 		{
-			printf("% 4d [%3d] <%3d>\n", current_b->content,
+			ft_printf("% 4d [%3d] <%3d>\n", current_b->content,
 				current_b->final_rank, current_b->pos);
 			current_b = current_b->next;
 		}
 		else
-			printf(" \n");
+			ft_printf(" \n");
 	}
-	printf(" ---------------|----------------\n        a       |        b\n");
-	printf("stack_a:%zu stack_b:%zu\n", ps->stack_a_size, ps->stack_b_size);
+	ft_printf(" ---------------|----------------\n        a       |        b\n");
+	ft_printf("stack_a:%zu stack_b:%zu\n", ps->stack_a_size, ps->stack_b_size);
 }
 
 void	ft_check_one_argv(t_pushswap *ps, char *argv)
