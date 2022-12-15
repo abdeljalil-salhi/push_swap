@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: absalhi <absalhi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 07:13:55 by absalhi           #+#    #+#             */
-/*   Updated: 2022/12/13 03:29:52 by absalhi          ###   ########.fr       */
+/*   Created: 2022/12/13 03:29:52 by absalhi           #+#    #+#             */
+/*   Updated: 2022/12/15 01:15:28 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,23 @@ static void	ft_set_ranks(t_pushswap *ps, size_t size)
 	}
 }
 
+static void	ft_free_stack(t_pushswap *ps)
+{
+	t_stack	*current;
+	t_stack	*tmp;
+
+	if (!ps->stack_a)
+		return ;
+	current = ps->stack_a;
+	while (current)
+	{
+		tmp = current->next;
+		free(current);
+		current = tmp;
+	}
+	ps->stack_a = NULL;
+}
+
 int	main(int argc, char **argv)
 {
 	t_pushswap	ps;
@@ -72,10 +89,9 @@ int	main(int argc, char **argv)
 	if (ft_is_stack_sorted(ps.stack_a))
 		return (0);
 	ft_set_ranks(&ps, ps.stack_a_size + 1);
-	// ft_display_stack(&ps);
 	push_swap(&ps);
-	// ft_display_stack(&ps);
 	if (ps.allocated)
 		ft_free_main(&ps);
+	ft_free_stack(&ps);
 	return (0);
 }

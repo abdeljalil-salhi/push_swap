@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 00:32:05 by absalhi           #+#    #+#             */
-/*   Updated: 2022/12/13 05:56:04 by absalhi          ###   ########.fr       */
+/*   Updated: 2022/12/15 01:16:47 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_push_b_and_prepare_quick_sort(t_pushswap *ps, size_t size)
 	i = -1;
 	while (size > 6 && (size_t)++i < size && pushed_to_b < size / 2)
 	{
-		if ((size_t) ps->stack_a->final_rank <= size / 2)
+		if ((size_t)ps->stack_a->final_rank <= size / 2)
 			pushed_to_b += push_b(ps, 1);
 		else
 			rotate_a(ps, 1);
@@ -96,7 +96,6 @@ void	ft_sort_stack(t_pushswap *ps)
 		ft_get_cost(ps);
 		ft_find_move(ps);
 	}
-	/* working on it */
 	if (!ft_is_stack_sorted(ps->stack_a))
 		ft_rotate_stack(ps, ps->stack_a, ps->stack_a_size);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: absalhi <absalhi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 07:14:07 by absalhi           #+#    #+#             */
-/*   Updated: 2022/12/13 05:49:41 by absalhi          ###   ########.fr       */
+/*   Created: 2022/12/13 00:14:26 by absalhi           #+#    #+#             */
+/*   Updated: 2022/12/15 01:14:50 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ struct s_find_move
 
 void	ft_check_one_argv(t_pushswap *ps, char *argv);
 int		ft_check_and_init(t_pushswap *ps);
-void	ft_display_stack(t_pushswap *ps);
 
 void	push_swap(t_pushswap *ps);
 
