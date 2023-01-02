@@ -65,7 +65,7 @@ As many of my friends requested, I decided to write a little walkthrough about m
 
 ### Checking and parsing the arguments
 
-We first check if the input is correct; all the arguments must be integers *(INT_MIN <= n <= INT_MAX)*, and there mustn't be any duplicates. If the input is correct, we parse it into a linked list, and we check if it's already sorted. If it is, we just print `OK` and exit. If it isn't, we continue.
+We first check if the input is correct; all the arguments must be integers *(INT_MIN <= n <= INT_MAX)*, and there mustn't be any duplicates. If the input is correct, we parse it into a linked list, and we check if it's already sorted. If it is, we just exit. If it isn't, we continue.
 
 *QUICK NOTE: I used a linked list because it is easier to manipulate its elements, but you can use an array if you want. I will use the term `stack` to refer to the linked list.*
 
@@ -161,7 +161,11 @@ If both `cost_stack_a` and `cost_stack_b` are negative, we reverse rotate (`rrr`
 
 ## Conclusion
 
-I know this isn't that easy to understand, neither that easy to code, but it is what it is, **push_swap** isn't an easy project, so read this documentation again and again, visualize your push_swap operations using the [push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer) or visualize your code flow using [python_tutor (C debugger)](https://pythontutor.com/c.html#mode=edit). Use my code as a fonctional example of the explication above if something isn't clear. Write your own code, if it doesn't work, delete it and try again and again until you get it to work. _Because swap__push isn't as natural_. Good luck.
+I know this isn't that easy to understand, neither that easy to code, but it is what it is, **push_swap** isn't an easy project, so read this documentation again and again, visualize your push_swap operations using the [push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer) or visualize your code flow using [python_tutor (C debugger)](https://pythontutor.com/c.html#mode=edit). Use my code as a fonctional example of the explication above if something isn't clear. Write your own code, if it doesn't work, delete it and try again and again until you get it to work. _Because swap_push isn't as natural_. Good luck.
+
+## BONUS
+
+You got your 100/100 in the mandatory part ? Congrats, the bonus is just a freebie in this project, you have to check if the stack is sorted using the given instructions, so we use our function `get_next_line` to read from the `0` _(standard input)_, for each line entered, we compare it with our known instructions (`sa, sb, ...`), if the input doesn't match with any of them, we must display `Error` in the standard error, otherwise we execute the proper instruction on our stack. If the input is empty _(contains only `\n` or `\0`)_ we must check if the stack is sorted (check if the stack B is empty and go through every element of the stack A checking if the current number is bigger than the previous one), if it is; we display `OK`, otherwise we display `KO`.
 
 ---
 
