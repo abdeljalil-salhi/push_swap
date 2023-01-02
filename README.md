@@ -61,7 +61,7 @@ The grade is on a scale from 0 to 100 (validating the project requires at least 
 
 ## My algorithm
 
-As many of my friends requested, I decided to write a little walkthrough about my algorithm. I will try to explain it as best as I can, but I'm not a native English speaker, so please bear with me. I will also try to keep it as short as possible, but I can't guarantee that it will THAAAT short.
+As many of my friends requested, I decided to write a little walkthrough about my algorithm. I will try to explain it as best as I can, but I'm not a native English speaker, so please bear with me. I will also try to keep it as short as possible, but I can't guarantee that it will be THAAAT short.
 
 ### Checking and parsing the arguments
 
