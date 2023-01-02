@@ -74,13 +74,13 @@ Many of the algorithms I found online use a temporary stack to store the sorted 
 ```c
 typedef struct s_stack
 {
-    int				content;
-	int				pos;
-	int				target_pos;
-	int				final_rank;
-	int				cost_stack_a;
-	int				cost_stack_b;
-	struct s_stack	*next;
+    int            content;
+    int            pos;
+    int            target_pos;
+    int            final_rank;
+    int            cost_stack_a;
+    int            cost_stack_b;
+    struct s_stack *next;
 }   t_stack;
 ```
 
