@@ -34,7 +34,7 @@ The goal of this project is to sort data on a stack, with a limited set of instr
 $> make
 $> ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker $ARG
 OK
-$> ARG=`ruby -e "puts (0..500).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checker -v $ARG
+$> ARG=`ruby -e "puts (0..500).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checker $ARG
 OK
 ```
 
