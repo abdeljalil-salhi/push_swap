@@ -18,6 +18,23 @@
 	<i>Visualizing my push_swap ~ 4689 instructions</i>
 </p>
 
+## Table of Contents
+
+- [push_swap - 42 project](#push-swap---42-project)
+  * [Description](#description)
+  * [Instructions](#instructions)
+  * [Usage](#usage)
+  * [Grading](#grading)
+  * [My algorithm](#my-algorithm)
+    + [Checking and parsing the arguments](#checking-and-parsing-the-arguments)
+    + [Setting the final ranks](#setting-the-final-ranks)
+    + [Sorting the stack](#sorting-the-stack)
+    + [Sorting the stack - 3 numbers or less](#sorting-the-stack---3-numbers-or-less)
+    + [Sorting the stack - more than 3 numbers](#sorting-the-stack---more-than-3-numbers)
+    + [Sorting the stack - moving the elements](#sorting-the-stack---moving-the-elements)
+  * [Conclusion](#conclusion)
+  * [BONUS](#bonus)
+
 ## Description
 
 The goal of this project is to sort data on a stack, with a limited set of instructions, using the lowest possible number of actions. To make this happen, you will have at your disposal a set of int values, 2 stacks and a set of instructions to manipulate both stacks.
