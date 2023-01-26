@@ -2,7 +2,7 @@
 
 <p align="center">
     <a href="https://projects.intra.42.fr/projects/42cursus-push_swap/projects_users/2904310" alt="absalhi's push_swap">
-        <img src="https://user-images.githubusercontent.com/65598953/210183738-869a59e8-746b-427b-9d6f-a9c4b591244b.png" alt="push_swap" />
+        <img src="https://user-images.githubusercontent.com/65598953/214836433-4e02b4c3-2a6b-4ca2-93c7-254c49be22a7.png" alt="push_swap" />
     </a>
     <br />
     <a href="https://projects.intra.42.fr/projects/42cursus-push_swap/projects_users/2904310">
