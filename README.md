@@ -10,6 +10,14 @@
     </a>
 </p>
 
+---
+
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/65598953/214843798-0be5b450-c9ba-40c3-a074-2b1796f8af8e.gif" alt="push_swap visualizer" />
+    <br />
+	<i>Visualizing my push_swap</i>
+</p>
+
 ## Description
 
 The goal of this project is to sort data on a stack, with a limited set of instructions, using the lowest possible number of actions. To make this happen, you will have at your disposal a set of int values, 2 stacks and a set of instructions to manipulate both stacks.
