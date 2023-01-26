@@ -15,7 +15,7 @@
 <p align="center">
     <img src="https://user-images.githubusercontent.com/65598953/214843798-0be5b450-c9ba-40c3-a074-2b1796f8af8e.gif" alt="push_swap visualizer" />
     <br />
-	<i>Visualizing my push_swap</i>
+	<i>Visualizing my push_swap ~ 4689 instructions</i>
 </p>
 
 ## Description
